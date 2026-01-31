@@ -28,7 +28,7 @@ ignore: # A list of paths or files which Sourcery will ignore.
 - ~/.config
 - ~/.local
 - target/  # Maven build output
-- **/*.class  # Compiled Java classes
+- "**/*.class"  # Compiled Java classes
 
 rule_settings:
   enable:
