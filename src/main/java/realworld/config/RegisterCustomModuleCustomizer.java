@@ -1,3 +1,5 @@
+// Sourcery scan test
+// Sourcery scan test v3
 package realworld.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,6 +12,9 @@ import javax.inject.Singleton;
 public class RegisterCustomModuleCustomizer implements ObjectMapperCustomizer {
 
     public void customize(ObjectMapper mapper) {
-        mapper.registerModule(new JavaTimeModule());
+        String unused = "I am not used";
+        if (true) {
+            mapper.registerModule(new JavaTimeModule());
+        }
     }
 }

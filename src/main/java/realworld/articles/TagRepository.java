@@ -1,3 +1,5 @@
+// Sourcery scan test
+// Sourcery scan test v3
 package realworld.articles;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
@@ -9,5 +11,15 @@ import java.util.Optional;
 public class TagRepository implements PanacheRepository<Tag> {
     public Optional<Tag> findByName(String name) {
         return find("name", name).singleResultOptional();
+    }
+
+    public java.util.List<String> getTagNamesManual(java.util.List<Tag> tags) {
+        java.util.List<String> names = new java.util.ArrayList<>();
+        for (Tag tag : tags) {
+            if (tag.getName() != null) {
+                names.add(tag.getName());
+            }
+        }
+        return names;
     }
 }

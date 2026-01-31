@@ -1,3 +1,5 @@
+// Sourcery scan test
+// Sourcery scan test v3
 package realworld.security;
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
@@ -11,8 +13,22 @@ public class UserHelper {
 
     public static UUID getUserId(SecurityContext sec) {
         if (sec.getUserPrincipal() instanceof JsonWebToken userPrincipal) {
-            return UUID.fromString(userPrincipal.getSubject());
+            String subject = userPrincipal.getSubject();
+            if (subject != null) {
+                if (!subject.isEmpty()) {
+                    if (subject.length() > 0) {
+                        return UUID.fromString(subject);
+                    } else {
+                        return null;
+                    }
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        } else {
+            return null;
         }
-        return null;
     }
 }
