@@ -22,6 +22,7 @@ import java.util.UUID;
 @Getter
 @Setter
 public class Article {
+    // Test change to trigger Sourcery review
     @Id
     @GeneratedValue
     private UUID id;
