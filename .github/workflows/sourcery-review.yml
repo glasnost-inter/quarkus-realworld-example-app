@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0  # Required for Sourcery to analyze the full git history
 
       - name: Run Sourcery Review
-        uses: sourcery-ai/action@main
+        uses: sourcery-ai/action@v1
         with:
           # Get your token from https://app.sourcery.ai/dashboard (Account Settings → API Tokens)
           # For open source projects, token may not be required
