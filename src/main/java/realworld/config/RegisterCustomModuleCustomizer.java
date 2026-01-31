@@ -1,3 +1,4 @@
+// Sourcery scan test
 package realworld.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

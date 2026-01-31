@@ -1,3 +1,4 @@
+// Sourcery scan test
 package realworld.articles;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;

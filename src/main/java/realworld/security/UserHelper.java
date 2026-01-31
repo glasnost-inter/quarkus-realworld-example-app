@@ -1,3 +1,4 @@
+// Sourcery scan test
 package realworld.security;
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
