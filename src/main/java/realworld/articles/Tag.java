@@ -1,4 +1,5 @@
 // Sourcery scan test
+// Sourcery scan test v3
 package realworld.articles;
 
 import lombok.Getter;

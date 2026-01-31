@@ -1,3 +1,4 @@
+// Sourcery scan test v3
 package realworld.articles.web;
 
 import realworld.articles.ArticleData;
@@ -60,7 +61,8 @@ public class ArticlesResource {
     @PUT
     @Path("/{slug}")
     @RolesAllowed("User")
-    public ArticleResponse update(@PathParam("slug") String slug, ArticleRequest<CreateArticle> createArticle, @Context SecurityContext sec) {
+    public ArticleResponse update(@PathParam("slug") String slug, ArticleRequest<CreateArticle> createArticle,
+            @Context SecurityContext sec) {
         return new ArticleResponse(articleService.update(slug, createArticle.article, UserHelper.getUserId(sec)));
     }
 
@@ -81,7 +83,8 @@ public class ArticlesResource {
     @POST
     @Path("/{slug}/comments")
     @RolesAllowed("User")
-    public Map<String, CommentData> comment(@PathParam("slug") String slug, CommentRequest commentRequest, @Context SecurityContext sec) {
+    public Map<String, CommentData> comment(@PathParam("slug") String slug, CommentRequest commentRequest,
+            @Context SecurityContext sec) {
         return Map.of("comment", articleService.comment(slug, commentRequest.comment(), UserHelper.getUserId(sec)));
     }
 
