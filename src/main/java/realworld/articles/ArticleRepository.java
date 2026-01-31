@@ -27,4 +27,12 @@ public class ArticleRepository implements PanacheRepository<Article> {
                 "SELECT a FROM Article a LEFT JOIN a.favorites f JOIN a.author author WHERE author.username = :username",
                 with("username", username)).stream();
     }
+
+    public boolean isComplexRefactorable(boolean a, boolean b, boolean c) {
+        if (!(a || b) && !c) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -13,8 +13,22 @@ public class UserHelper {
 
     public static UUID getUserId(SecurityContext sec) {
         if (sec.getUserPrincipal() instanceof JsonWebToken userPrincipal) {
-            return UUID.fromString(userPrincipal.getSubject());
+            String subject = userPrincipal.getSubject();
+            if (subject != null) {
+                if (!subject.isEmpty()) {
+                    if (subject.length() > 0) {
+                        return UUID.fromString(subject);
+                    } else {
+                        return null;
+                    }
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        } else {
+            return null;
         }
-        return null;
     }
 }

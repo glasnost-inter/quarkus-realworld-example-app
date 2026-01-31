@@ -12,4 +12,14 @@ public class TagRepository implements PanacheRepository<Tag> {
     public Optional<Tag> findByName(String name) {
         return find("name", name).singleResultOptional();
     }
+
+    public java.util.List<String> getTagNamesManual(java.util.List<Tag> tags) {
+        java.util.List<String> names = new java.util.ArrayList<>();
+        for (Tag tag : tags) {
+            if (tag.getName() != null) {
+                names.add(tag.getName());
+            }
+        }
+        return names;
+    }
 }

@@ -20,6 +20,10 @@ public class TagsResource {
 
     @GET
     public TagsResponse tags() {
-        return new TagsResponse(tagRepository.listAll().stream().map(Tag::getName).sorted().toList());
+        if (tagRepository != null) {
+            return new TagsResponse(tagRepository.listAll().stream().map(Tag::getName).sorted().toList());
+        } else {
+            return null;
+        }
     }
 }
