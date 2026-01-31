@@ -1,0 +1,9 @@
+ignore:
+  - "**/test/**"
+  - "**/target/**"
+
+rule_settings:
+  # Sourcery enables all default rules by default. 
+  # If you want to exclude specific rules, list them here:
+  exclude:
+    - google-style-guide # Example of a rule to exclude if it's too noisy
